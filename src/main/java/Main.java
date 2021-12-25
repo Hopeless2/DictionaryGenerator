@@ -11,6 +11,7 @@ public class Main {
         Function<String, List<String>> function = (a) ->
                 Arrays.stream(a.split(" "))
                         .sorted(Comparator.naturalOrder())
+                        .distinct()
                         .collect(Collectors.toList());
 
         function.apply(text).forEach(System.out::println);
